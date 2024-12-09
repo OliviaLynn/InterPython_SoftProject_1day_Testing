@@ -25,3 +25,14 @@ def test_max_mag_zeros():
     test_output = 0
 
     assert max_mag(test_input_df, test_input_colname) == test_output
+
+
+def test_min_mag_negatives():
+   # Test that min_mag function works for negatives
+   from lcanalyzer.models import min_mag
+
+   test_input_df = pd.DataFrame(data=[[-7, -7, -3], [-4, -3, -1], [-1, -5, -3]], columns=list("abc"))
+   test_input_colname = "b"
+   test_output = -7
+
+   assert min_mag(test_input_df, test_input_colname) == test_output
